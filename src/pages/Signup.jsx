@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Signup() {
   const navigate = useNavigate();
+  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirm, setConfirm] = useState('');
@@ -11,7 +12,7 @@ export default function Signup() {
   function handleSubmit(e) {
     e.preventDefault();
     setError('');
-    if (!email || !password || !confirm) {
+    if (!username || !email || !password || !confirm) {
       setError('Veuillez remplir tous les champs.');
       return;
     }
@@ -19,8 +20,24 @@ export default function Signup() {
       setError('Les mots de passe ne correspondent pas.');
       return;
     }
-    // Ici tu peux appeler ton API pour créer le compte. Pour l'instant on simule réussite.
-    navigate('/');
+
+    try {
+      const raw = localStorage.getItem('smiler_registered')
+      const users = raw ? JSON.parse(raw) : []
+      // Vérifier doublon par pseudo ou email
+      const exists = users.find(u => u.email === email || u.username === username)
+      if (exists) {
+        setError('Un utilisateur avec ce pseudo ou cet email existe déjà.');
+        return;
+      }
+      users.push({ username, email, password })
+      localStorage.setItem('smiler_registered', JSON.stringify(users))
+    } catch (e) {
+      // ignore
+    }
+
+    // Après inscription on renvoie vers la page de connexion
+    navigate('/signin');
   }
 
   return (
@@ -28,6 +45,10 @@ export default function Signup() {
       <section className="auth-card">
         <h1>Inscription</h1>
         <form onSubmit={handleSubmit} className="auth-form">
+          <label>
+            Pseudo
+            <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="ton pseudo" />
+          </label>
           <label>
             Email
             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="ton@exemple.com" />
@@ -50,4 +71,3 @@ export default function Signup() {
     </main>
   );
 }
-

@@ -10,14 +10,11 @@ export default function About() {
           <div className="about-text">
             <h2>Notre Histoire</h2>
             <p>
-              Bienvenue chez Smiler. Nous créons des produits au style néon, modernes
-              et pensés pour les amateurs d'esthétique audacieuse.
-            </p>
-
-            <h2>Notre Mission</h2>
-            <p>
-              Offrir une expérience utilisateur exceptionnelle et des produits
-              de qualité avec un design distinctif.
+              Bonjour je suis Aanima, bienvenue chez Smiler.
+                Ce site n'est pa à but commercial, il a été créé
+                dans le cadre d'un projet que j'avais en tete
+                pour apprendre le développement web notament React, jsx et Tailwind.
+                Smiler est une marque fictive spécialisée dans la mode Jeux vidéos et mangas.
             </p>
 
             <h2>Nos Valeurs</h2>

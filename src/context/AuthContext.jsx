@@ -19,9 +19,9 @@ export function AuthProvider({ children }) {
     } catch (e) {}
   }, [user])
 
-  const login = ({ email }) => {
-    // Simule une authentification réussie. En vrai, appeler API et gérer le token.
-    setUser({ email })
+  const login = (userObj) => {
+    // Attends un objet utilisateur complet { username, email, ... }
+    setUser(userObj)
   }
 
   const logout = () => setUser(null)
@@ -32,4 +32,3 @@ export function AuthProvider({ children }) {
     </AuthContext.Provider>
   )
 }
-

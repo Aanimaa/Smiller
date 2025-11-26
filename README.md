@@ -19,3 +19,4 @@ Ajoute tes images dans `public/images/` (logo.png, hero.jpg) et `src/assets/imag
 # Smiller
 # Smiller
 # Smiller
+# Smiller

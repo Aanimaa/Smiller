@@ -18,3 +18,4 @@ npm run dev
 Ajoute tes images dans `public/images/` (logo.png, hero.jpg) et `src/assets/images/` (profil.jpg).
 # Smiller
 # Smiller
+# Smiller

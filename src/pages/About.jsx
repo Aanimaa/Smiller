@@ -10,11 +10,11 @@ export default function About() {
           <div className="about-text">
             <h2>Notre Histoire</h2>
             <p>
-              Bonjour je suis Aanima, bienvenue chez Smiler.
-                Ce site n'est pa à but commercial, il a été créé
-                dans le cadre d'un projet que j'avais en tete
-                pour apprendre le développement web notament React, jsx et Tailwind.
-                Smiler est une marque fictive spécialisée dans la mode Jeux vidéos et mangas.
+                Bonjour, je suis Aanima, bienvenue chez Smiler.
+                Ce site n'est pas à but commercial, il a été créé
+                dans le cadre d'un projet que j'avais en tête
+                pour apprendre le développement web, notamment React, JSX et Tailwind.
+                Smiler est une marque fictive spécialisée dans la mode, les jeux vidéo et les mangas.
             </p>
 
             <h2>Nos Valeurs</h2>

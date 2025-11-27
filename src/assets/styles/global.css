@@ -201,11 +201,71 @@ footer{
   .carousel-viewport{max-width:320px;aspect-ratio:16/12}
 }
 
-/* Utility */
-.text-muted{color:var(--muted)}
-.center{text-align:center}
+/* New mobile-specific tweaks */
+@media (max-width:640px){
+  /* Header compact */
+  .header-inner{padding:0.5rem 0}
+  .header-logo{height:56px;width:56px;border-radius:12px}
+  .header-center{position:static;left:auto;transform:none;flex:1;display:flex;justify-content:center;align-items:center}
+  .header-center .brand-text{font-size:1.15rem}
 
-/* Tiny helpers for image placeholders */
-.placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);font-weight:700}
+  /* Reduce nav clutter: hide only Connexion/Inscription, KEEP About visible */
+  .site-nav a:nth-of-type(1), .site-nav a:nth-of-type(2){display:none} /* hide Connexion/Inscription only */
+  .cart-label{display:none}
+  .cart-count{margin-left:4px;padding:2px 5px;font-size:11px}
 
-/* End */
+  /* Ensure the cart button still clickable and compact */
+  nav.site-nav{display:flex;align-items:center;gap:8px}
+  .btn{padding:0.5rem 0.8rem;font-size:0.9rem}
+
+  /* Hero adjustments - FIX: ensure carousel is visible */
+  .hero{padding:2rem 0 2rem;min-height:auto}
+  .hero-inner{gap:1rem;flex-direction:column-reverse;min-height:auto}
+  .hero-left{min-height:auto}
+  .hero-right{width:100%;display:flex;justify-content:center;margin-bottom:1.5rem;min-height:auto}
+  .hero-title{font-size:1.6rem}
+  .hero-sub{font-size:0.95rem}
+  .carousel-viewport{max-width:100%;width:100%;max-width:320px;aspect-ratio:4/5;margin:0 auto}
+
+  /* Product cards tighter */
+  .products-grid{grid-template-columns:repeat(2,1fr);gap:0.8rem}
+  .product-media{height:150px}
+  .product-card{padding:0.85rem;border-radius:10px}
+
+  /* About section - ENSURE VISIBLE */
+  .about-section{padding:2rem 0;min-height:auto}
+  .about-title{font-size:1.8rem;margin-bottom:1rem}
+  .about-content{padding:1.5rem;border-radius:10px}
+  .about-text h2{font-size:1.1rem;margin-top:1rem}
+  .values-list{grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:0.6rem}
+
+  /* Container adjustments */
+  .container{padding:1.5rem}
+}
+
+@media (max-width:420px){
+  /* Very small phones */
+  .header-logo{height:48px;width:48px}
+  .header-center .brand-text{font-size:1rem}
+  .products-grid{grid-template-columns:repeat(1,1fr)}
+  .carousel-viewport{max-width:100%;width:100%;aspect-ratio:3/4}
+  .product-media{height:140px}
+  .hero-title{font-size:1.35rem}
+  .hero-sub{font-size:0.9rem}
+
+  /* Make sure footer content remains centered and readable */
+  .footer-inner{padding:0 1rem}
+
+  /* About adjustments for very small screens */
+  .about-title{font-size:1.5rem}
+  .about-content{padding:1rem}
+  .values-list{grid-template-columns:1fr}
+
+  /* Container padding */
+  .container{padding:1rem}
+}
+
+/* Accessibility: ensure focus styles remain visible on mobile */
+.btn:focus, a:focus{outline:2px solid rgba(139,92,246,0.22);outline-offset:2px}
+
+/* End added responsive tweaks */

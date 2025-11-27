@@ -13,6 +13,7 @@ export default function Footer() {
                                 <span className="mx-1 text-purple-400" style={{fontSize:16}}>❤️</span>
                                 et beaucoup de code.
                             </p>
+
                         </div>
                     </div>
                 </div>

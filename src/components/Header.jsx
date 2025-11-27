@@ -90,10 +90,10 @@ export default function Header() {
                             <circle cx="10" cy="20" r="1" fill="currentColor" />
                             <circle cx="18" cy="20" r="1" fill="currentColor" />
                         </svg>
-                        <span>Panier</span>
+                        <span className="cart-label">Panier</span>
                         {/* compteur si items présents */}
                         {cartItems.length > 0 && (
-                            <span style={{ marginLeft: 6, background: 'rgba(255,255,255,0.06)', padding: '2px 6px', borderRadius: 8, fontSize: 12 }}>{cartItems.reduce((acc, it) => acc + (it.qty || 1), 0)}</span>
+                            <span className="cart-count" style={{ marginLeft: 6, background: 'rgba(255,255,255,0.06)', padding: '2px 6px', borderRadius: 8, fontSize: 12 }}>{cartItems.reduce((acc, it) => acc + (it.qty || 1), 0)}</span>
                         )}
                     </button>
                 </nav>
